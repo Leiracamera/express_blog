@@ -23,3 +23,17 @@ LOG
     - README.md
 - npm init -y (created package.json) 
 - npm i express, ejs & body-parser packages (node_modules)
+
+
+What is currently working: 
+- Menu links to 
+     - My Blog = home page
+     - Home = home page
+     - /create-post takes user to a form, to create a blog post. When pressed submit, the post is saved to the server 
+     - Once they press submit it redirects to /blogs/[index of blog post (1, 2, 3 etc)]
+     - blogs by itself goes to a page that has a list of all the blogs 
+     - links on blogs main page link to individual blogs at their own url (using post id)
+
+- TODO
+    - Edit button to edit the post
+    

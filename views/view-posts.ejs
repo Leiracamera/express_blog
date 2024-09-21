@@ -1,13 +1,19 @@
-<%# Page to view all blogs (with clickable links to individual blogs) %>
+<%# Dynamically posts the blog that has been selected from view blogs link %>
 
 <%- include("partials/header.ejs") %> <!-- Include header and navbar -->
 
-<!-- List of blog posts -->
 <h1>All Blog Posts</h1>
+
 <ul>
-    <!-- Loop through blog posts and display them as links -->
-    <li><a href="#">Blog Post 1</a></li>
-    <li><a href="#">Blog Post 2</a></li>
+    <% posts.forEach(function(post, index) { %> 
+        <li>
+            <h2>
+                <a href="/view-posts/<%= index %>"><%= post.title %></a>
+            </h2>
+            <p> By <%= post.author %> on <%=  post.date %></p>
+            <p><%= post.content %></p>
+        </li>
+  <% })%>
 </ul>
 
 <%- include("partials/footer.ejs") %> <!-- Include footer -->

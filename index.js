@@ -38,15 +38,15 @@ app.post("/create-post", (req, res) => {
     const newPostId = blogPosts.length - 1;
     console.log(newPostId);
 
-    res.redirect(`/blogs/${newPostId}`);
+    res.redirect(`/view-posts/${newPostId}`);
 });
 
 // Render the blogs page and pass blogPosts
-app.get("/blogs", (req, res) => {
-    res.render("blogs.ejs", {posts: blogPosts});
+app.get("/view-posts", (req, res) => {
+    res.render("view-posts.ejs", {posts: blogPosts});
 });
 
-app.get("/blogs/:id", (req, res) => {
+app.get("/view-posts/:id", (req, res) => {
     const blogId = req.params.id;
     const post = blogPosts[blogId];
 
@@ -57,15 +57,29 @@ app.get("/blogs/:id", (req, res) => {
     }
 });
 
-app.post("/blogs/:id/delete", (req, res) => {
+app.post("/view-posts/:id/delete", (req, res) => {
     const blogId = req.params.id;
     if (blogPosts[blogId, 1]) {
         blogPosts.splice(blogId, 1);
-        res.redirect("/blogs");
+        res.redirect("/view-posts");
     } else {
         res.status(404).send("Post not found");
     }   
 });
+
+app.get("/view-posts/:id/edit", (req, res) => {
+    const blogId = req.params.id;
+    const post = blogPosts[blogId];
+
+    if (post) {
+        res.locals.post = post;
+        res.locals.blogId = blogId;
+        res.render("edit.ejs");
+    } else {
+        res.status(404).send("Post not found");
+    }
+});
+
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);
