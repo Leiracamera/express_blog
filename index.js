@@ -23,13 +23,13 @@ app.get("/create-post", (req, res) => {
  // Handle form submission from Create Post 
 app.post("/create-post", (req, res) => {
     const { blogTitle, authorName, blogContent} = req.body;
-    const currentDate = new Date().toLocaleDateString(); 
+    const currentDateTime = new Date().toLocaleString(); 
 
     const newPost = {
         title: blogTitle,
         author: authorName,
         content: blogContent,
-        date: currentDate
+        date: currentDateTime
     };
 
     blogPosts.push(newPost);
@@ -83,6 +83,7 @@ app.get("/view-posts/:id/edit", (req, res) => {
 app.post("/view-posts/:id", (req, res) => {
     const blogId = req.params.id;
     const { blogTitle, authorName, blogContent } = req.body;
+    const editedDateTime = new Date().toLocaleString();
 
     console.log("Before update:", blogPosts); // Check the array before the update
 
@@ -90,6 +91,7 @@ app.post("/view-posts/:id", (req, res) => {
     blogPosts[blogId].title = blogTitle;
     blogPosts[blogId].author = authorName;
     blogPosts[blogId].content = blogContent;
+    blogPosts[blogId].editedDateTime = editedDateTime;
 
     console.log("After update:", blogPosts); // Check the array after the update
     res.redirect(`/view-posts/${blogId}`);

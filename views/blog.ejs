@@ -1,7 +1,12 @@
 <%- include("partials/header.ejs") %>
 
 <h1><%= post.title %></h1>
-<p> By <%= post.author %> on <%= post.date %></p>
+<p> Written By <%= post.author %> </p>
+<p>Posted: <%= post.date %> </p>
+<% if (post.editedDateTime) { %>
+  <p>Edited: <%= post.editedDateTime %></p>
+<% } %>
+
 <p><%= post.content %></p>
 
 <form action="/view-posts/<%= blogId %>/delete" method="POST">
