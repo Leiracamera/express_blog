@@ -80,6 +80,21 @@ app.get("/view-posts/:id/edit", (req, res) => {
     }
 });
 
+app.post("/view-posts/:id", (req, res) => {
+    const blogId = req.params.id;
+    const { blogTitle, authorName, blogContent } = req.body;
+
+    console.log("Before update:", blogPosts); // Check the array before the update
+
+    // Update each field directly
+    blogPosts[blogId].title = blogTitle;
+    blogPosts[blogId].author = authorName;
+    blogPosts[blogId].content = blogContent;
+
+    console.log("After update:", blogPosts); // Check the array after the update
+    res.redirect(`/view-posts/${blogId}`);
+});
+
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);

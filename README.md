@@ -35,5 +35,6 @@ What is currently working:
      - links on blogs main page link to individual blogs at their own url (using post id)
 
 - TODO
-    - Edit button to edit the post
+    - Edit page needs to allow data to be updated. 
+    - Create styling in CSS 
     
