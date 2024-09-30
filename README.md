@@ -35,6 +35,7 @@ What is currently working:
      - links on blogs main page link to individual blogs at their own url (using post id)
 
 - TODO
-    - Edit page needs to allow data to be updated. 
+    - Add code to handle when only 1 blog post exits 
+    and is deleted, currently goes to "post not found", but if there are 2 or more posts the delete button redirects to the view blogs page. Perhaps the view blogs page has placeholder info "for" when no blogs exists yet?  
     - Create styling in CSS 
     
