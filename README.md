@@ -38,4 +38,4 @@ What is currently working:
     - Add code to handle when only 1 blog post exits 
     and is deleted, currently goes to "post not found", but if there are 2 or more posts the delete button redirects to the view blogs page. Perhaps the view blogs page has placeholder info "for" when no blogs exists yet?  
     - Create styling in CSS 
-    
+    - Nav bar doesn't open when on view-posts/0[index] (the edit/delete post page) - fix
