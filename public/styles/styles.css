@@ -1,0 +1,42 @@
+body {
+    background-color: #ede8dc;
+}
+
+footer .text-body-secondary {
+    color: #e7cccc !important; /* Use your desired color */
+  }
+
+  .footer-bg {
+    background-color: #4d5442;
+    width: 100%;
+  }
+
+  .navbar {
+    color: #4d5442;
+    background-color: #ede8dc;
+  } 
+
+  h1 {
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-style: italic;  
+  }
+
+  p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .container-grid {
+    background-color: #ede8dc;
+    background-image: 
+        linear-gradient(to right, #c1cfa1 1px, transparent 1px),
+        linear-gradient(to bottom, #c1cfa1 1px, transparent 1px);
+    background-size: 20px 20px; /* Adjust this to fit your grid scale */
+    padding: 20px;
+    margin: 2rem;
+    text-align: left;
+    color: #3a3a3a; /* Adjust text color */
+    font-family: 'Your-Font-Here', serif; /* Customize your font */
+}
