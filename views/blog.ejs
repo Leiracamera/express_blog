@@ -1,15 +1,34 @@
 <%- include("partials/header.ejs") %>
 
-<h1><%= post.title %></h1>
-<p> Written By <%= post.author %> </p>
-<p>Posted: <%= post.date %> </p>
-<% if (post.editedDateTime) { %>
-  <p>Edited: <%= post.editedDateTime %></p>
-<% } %>
 
-<p><%= post.content %></p>
+<div class="container">
 
-<form action="/view-posts/<%= blogId %>/delete" method="POST">
-    <button type="submit" class="btn btn-danger">Delete Post</button>
-    <a href="/view-posts/<%= blogId %>/edit" class="edit-btn">Edit Post</a>
-</form>
+  <div class="container-grid">
+    <h1>Web Dev Journals</h1>
+  <p>A photographer learns web development and keeps it together</p>
+  </div>
+
+  </div>
+  <article class="blog-post">
+    <h1 class="display-5 link-body-emphasis mb-1"><%= post.title %></h1>
+
+    <p class="blog-post-meta">
+      Posted: <%= post.date %>
+      <% if (post.editedDateTime) { %>
+      | Edited: <%= post.editedDateTime %>
+    <% } %> 
+    | Written by: <%= post.author %>
+    </p>
+
+    <p><%= post.content %></p>
+    
+      <form action="/view-posts/<%= blogId %>/delete" method="POST">
+        <button type="submit" class="btn btn-danger">Delete Post</button>
+        <a href="/view-posts/<%= blogId %>/edit" class="btn btn-primary">Edit Post</a>
+      </form>
+
+  </article>
+
+</div>
+
+  <%- include("partials/footer.ejs") %> 

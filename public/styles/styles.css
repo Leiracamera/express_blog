@@ -1,42 +1,266 @@
+/* General Body and main settings */
+
 body {
     background-color: #ede8dc;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
 }
 
-footer .text-body-secondary {
-    color: #e7cccc !important; /* Use your desired color */
-  }
+main {
+    flex-grow: 1;
+    padding: 20px;
+}
 
-  .footer-bg {
+.container {
+    padding: 20px; 
+    margin-top: 20px auto; 
+}
+
+.footer-bg {
     background-color: #4d5442;
     width: 100%;
+    padding 20px 0;
+    margin-top: auto;
   }
 
-  .navbar {
-    color: #4d5442;
-    background-color: #ede8dc;
-  } 
+/* General Typography settings */
 
-  h1 {
+h1, h2 {
+    margin-bottom: 20px;
     font-family: "DM Serif Display", serif;
+    color: #4d5442;
     font-weight: 400;
-    font-style: italic;  
   }
 
-  p {
+h1 {
+    font-size: 2.5rem;
+    font-style: italic;
+    }
+
+p, form label, form input, form textarea {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
-    font-style: normal;
+    font-weight: 400;
   }
 
+p {
+    font-style: normal;
+    margin-bottom: 1.5rem;
+}
+
+/* Forms Styling */
+
+form {
+    max-width: 600px;
+    padding: 20px;
+    margin: 20px auto 40px;
+    border-radius: 10px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form textarea {
+    height: 150px;
+}
+
+form button {
+    padding: 10px 20px;
+    margin-top: 20px;;
+    font-size: 1rem;
+    border-radius: 25px;
+    background-color: #4d5442;
+    color: #e7cccc;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-danger, .btn-primary {
+    padding: 10px 20px;
+    margin-top: 20px;;
+    font-size: 1rem;
+    border-radius: 25px;
+    background-color: #4d5442;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-danger:hover, .btn-primary:hover {
+    background-color: #333; 
+    color: #fff;
+}
+
+.btn-primary {
+    background-color: #4d5442; 
+}
+
+.btn-danger {
+    background-color: #f44336; 
+    margin-left: 15px; 
+}
+
+/* View posts layout */
+
+.view-posts, .latest-post {
+    background-color: #f8f9fa; 
+    border-radius: 10px; 
+    padding: 30px;
+    margin: 20 auto; 
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.latest-post:hover, .view-posts:hover {
+    box-shadow: 0px 6px 20px rgba(0,0,0,0.15); /* Slightly deeper shadow on hover */
+}
+
+/* Blog post styling */
+
+.blog-post {
+    margin: 0 auto; 
+    padding: 40px 60px; 
+    max-width: 800px; 
+    background-color: #fff; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    border-radius: 10px; 
+  }
+  
+  .blog-post h1 {
+    font-size: 2rem;
+    font-style: italic;  
+  }
+  
+  .blog-post-meta {
+    font-size: 1rem;
+    color: #6c757d;
+    margin-bottom: 20px;
+  }
+  
+/* media queries */ 
+
+@media (max-width: 768) {
+    .container, .view-posts {
+        padding: 20px;
+    }
+
+    .container-grid {
+        padding: 15px;
+        background-size: 10px 10px;
+    }
+
+    .latest-post, .view-posts {
+        margin: 0 10px 20px 10px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        padding: 40px;
+        max-width: 1100px;
+    }
+
+    .latest-post, .view-posts {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .view-posts .card, .latest-post .card {
+        margin: 15px;
+        max-width: 500px;
+        min-width: 250px;
+    }
+}
+
+.blog-post p {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #4d5442;
+    text-align: justify; 
+    margin-bottom: 1.5rem;
+  }
+
+/* Styling for the green grid on each page */
   .container-grid {
     background-color: #ede8dc;
     background-image: 
         linear-gradient(to right, #c1cfa1 1px, transparent 1px),
         linear-gradient(to bottom, #c1cfa1 1px, transparent 1px);
     background-size: 20px 20px; /* Adjust this to fit your grid scale */
-    padding: 20px;
+    padding: 30px;
     margin: 2rem;
     text-align: left;
     color: #3a3a3a; /* Adjust text color */
     font-family: 'Your-Font-Here', serif; /* Customize your font */
+}
+
+footer .text-body-secondary {
+    color: #e7cccc !important; /* Use your desired color */
+  }
+
+  .latest-post {
+    background-color: #f8f9fa; /* Soft background for contrast */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    padding: 30px;
+    margin: 0 100px 40px 100px; /* Center it and add margin at the bottom */
+    transition: box-shadow 0.3s ease; /* Adds hover effect */
+}
+
+.latest-post h1 {
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 2.5rem;
+    color: #4d5442;
+}
+
+.latest-post p.lead {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.2rem;
+    color: #6c757d; /* Make the text color slightly different for visual interest */
+}
+
+.latest-post a {
+    font-family: "Roboto", sans-serif;
+    color: #007bff; /* Bootstrap default link color */
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 1px solid #007bff;
+}
+
+.latest-post a:hover {
+    color: #0056b3; /* Darker link color on hover */
+    border-bottom: 2px solid #0056b3;
+}
+
+@media (max-width: 768px) {
+    .latest-post {
+        padding: 20px;
+        max-width: 100%; /* Make it take full width on mobile */
+        margin: 0 15px 20px 15px; /* Add small margin on mobile for spacing */
+    }
+
+    .latest-post h1 {
+        font-size: 1.8rem; /* Slightly smaller headline for mobile */
+    }
+
+    .latest-post p.lead {
+        font-size: 1rem; /* Reduce lead text size on mobile */
+    }
 }

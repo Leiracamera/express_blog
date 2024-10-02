@@ -12,7 +12,13 @@ let blogPosts = [];
 
 // Home page route
 app.get("/", (req, res) => {
-  res.render("index.ejs")
+    if (blogPosts.length > 0) {
+        const latestPost = blogPosts[blogPosts.length - 1];
+    res.render("index.ejs", {latestPost, blogPosts});
+    } else {
+        res.render("index.ejs", {latestPost: null, blogPosts: []});
+    }
+  
 });
 
 // Render Create Post page
@@ -96,6 +102,8 @@ app.post("/view-posts/:id", (req, res) => {
     console.log("After update:", blogPosts); // Check the array after the update
     res.redirect(`/view-posts/${blogId}`);
 });
+
+
 
 
 app.listen(port, () => {

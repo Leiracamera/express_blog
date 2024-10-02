@@ -4,32 +4,34 @@ after submitting sends user to view blogs page %>
 
 <%- include("partials/header.ejs") %> <!-- Include header and navbar -->
 
-<!-- Create post form goes here -->
-<div class="container-grid">
-<h1>Create a New Blog Post</h1>
-</div>
-<form action="/create-post" method="POST">
-        <div class="form-group">
+<div class="container">
+   
+  <!-- Create post form goes here -->
+    <div class="container-grid">
+      <h1>Create a New Blog Post</h1>
+    </div>
+    
+    <form action="/create-post" method="POST">
+      <div class="form-group">
+      <!-- blog title -->
+        <label for="blog-title">Blog Title</label>
+        <input type="text" class="form-control" id="blog-title" name="blogTitle" placeholder="My great day...">
+      </div>
+            
+      <!-- blog author -->
+      <div class="form-group">
+        <label for="author-name">Author Name</label>
+        <input type="text" class="form-control" id="author-name" name="authorName" placeholder="Enter your name">
+      </div>
 
-            <!-- blog title -->
-            <label for="blog-title">Blog Title</label>
-            <input type="text" class="form-control" id="blog-title" name="blogTitle" placeholder="My great day...">
-        </div>
-        
-        <!-- blog author -->
-        <div class="form-group">
-            <label for="author-name">Author Name</label>
-            <input type="text" class="form-control" id="author-name" name="authorName" placeholder="Enter your name">
-          </div>
+      <!-- blog content -->
+      <div class="form-group">
+        <label for="blog-content">Blog Content</label>
+        <textarea class="form-control" id="blog-content" name="blogContent" rows="5" placeholder="Start your blog..."></textarea>
+      </div>
+      <!-- Submit Button -->
+       <button type="submit" class="btn btn-primary">Submit Post</button>
+    </form>
+</div> 
 
-        <!-- blog content -->
-        <div class="form-group">
-            <label for="blog-content">Blog Content</label>
-            <textarea class="form-control" id="blog-content" name="blogContent" rows="5" placeholder="Start your blog..."></textarea>
-          </div>
-          <!-- Submit Button -->
-        <button type="submit" class="btn btn-primary">Submit Post</button>
-      </form>
-      
-    <!-- Form fields for title, content, etc. -->
 <%- include("partials/footer.ejs") %> <!-- Include footer -->

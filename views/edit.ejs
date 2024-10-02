@@ -3,33 +3,35 @@
 <%- include("partials/header.ejs") %> 
 
 
-<h1>Edit Blog</h1>
+<div class="container">
+  <div class="container-grid">
+    <h1>Edit Blog</h1>
+  </div>
+  
+  <!-- Create post form goes here -->
 
-<!-- Create post form goes here -->
-<h1>Create a New Blog Post</h1>
-<form action="/view-posts/<%= blogId %>" method="POST">
-        <div class="form-group">
-
+  <form action="/view-posts/<%= blogId %>" method="POST">
+          <div class="form-group">
             <!-- edit blog title -->
             <label for="blog-title">Blog Title</label>
             <input type="text" class="form-control" id="blog-title" name="blogTitle" value="<%= post.title %>">
-        </div>
-        
-        <!-- blog author -->
-        <div class="form-group">
+          </div>
+          
+          <!-- blog author -->
+          <div class="form-group">
             <label for="author-name">Author Name</label>
             <input type="text" class="form-control" id="author-name" name="authorName" value="<%= post.author %>">
           </div>
-
+            
         <!-- blog content -->
         <div class="form-group">
             <label for="blog-content">Blog Content</label>
             <textarea class="form-control" id="blog-content" name="blogContent" rows="5"><%= post.content %></textarea>
         </div>
-          <!-- Submit Button -->
+        <!-- Submit Button -->
         <button type="submit" class="btn btn-primary">Submit Edit</button>
-      </form>
-
+    </form>
+</div>
 <%- include("partials/footer.ejs") %> 
 
 
