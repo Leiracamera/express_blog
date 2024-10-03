@@ -69,7 +69,7 @@ app.post("/view-posts/:id/delete", (req, res) => {
         blogPosts.splice(blogId, 1);
         res.redirect("/view-posts");
     } else {
-        res.status(404).send("Post not found");
+        res.redirect("/");
     }   
 });
 
